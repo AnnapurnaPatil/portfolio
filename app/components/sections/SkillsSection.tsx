@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import type { SkillCategory } from '../../../types/portfolio';
-import { sectionVariants, containerVariants, itemVariants, VIEWPORT_MARGIN } from '../../../lib/constants';
+import { sectionVariants, containerVariants, VIEWPORT_MARGIN } from '../../../lib/constants';
 import { getIcon, getSkillLevelColor } from '../../../lib/utils';
 
 interface SkillsSectionProps {
