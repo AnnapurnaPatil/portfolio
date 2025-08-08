@@ -20,7 +20,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Ta
 - **Styling**: Tailwind CSS 4
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
-- **Deployment**: Vercel
+- **Deployment**: GitHub Pages (Static Export)
 - **Development**: Turbopack for fast development builds
 
 ## 📁 Project Structure
@@ -86,7 +86,8 @@ npm run dev
 ### Available Scripts
 
 - `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
+- `npm run build` - Build for production and generate static export
+- `npm run export` - Build for production and generate static export (alias for build)
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues
@@ -145,18 +146,23 @@ The project uses Tailwind CSS with custom CSS variables for theming. Update colo
 
 ## 🚀 Deployment
 
-The project is configured for deployment on Vercel:
+The project is configured for static export and deployment on GitHub Pages:
 
+### Automatic Deployment
 1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically on every push to main
+2. GitHub Actions will automatically build and deploy to GitHub Pages
+3. Site will be available at `https://annapurnapatil.github.io/portfolio/`
 
-### Environment Variables
+### Manual Deployment
+1. Run `npm run build` to generate static files in the `out/` directory
+2. Upload the `out/` folder contents to any static hosting service
 
-For production deployment, set these environment variables:
+### GitHub Pages Setup
+The project includes:
+- **Static Export**: Configured in `next.config.ts` with `output: 'export'`
+- **GitHub Actions**: Automated deployment workflow in `.github/workflows/nextjs.yml`
+- **Base Path**: Configured for GitHub Pages subdirectory deployment
 
-- `NEXT_PUBLIC_SITE_URL` - Your site URL
-- `NEXT_PUBLIC_GA_ID` - Google Analytics ID (optional)
 
 ## 📈 SEO Features
 
@@ -175,10 +181,6 @@ While this is a personal portfolio, suggestions and improvements are welcome:
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
