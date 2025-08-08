@@ -1,0 +1,63 @@
+{
+  "name": "annapurna-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Annapurna Patil's professional portfolio showcasing front-end development skills and experience",
+  "author": {
+    "name": "Annapurna Patil",
+    "email": "annapurnapatil23@gmail.com",
+    "url": "https://anu-portfolio.vercel.app"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwindcss"
+  ],
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "export": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "analyze": "ANALYZE=true npm run build"
+  },
+  "dependencies": {
+    "framer-motion": "^12.18.1",
+    "lucide-react": "^0.515.0",
+    "next": "15.3.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
