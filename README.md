@@ -81,7 +81,7 @@ npm install
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000/portfolio/](http://localhost:3000/portfolio/) in your browser.
 
 ### Available Scripts
 

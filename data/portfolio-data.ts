@@ -56,7 +56,10 @@ export const skillsData: SkillCategory[] = [
     icon: "Monitor",
     skills: [
       { name: "AmazonQ", level: "Beginner", years: 1 },
-      { name: "Copilot", level: "Beginner", years: 1 }
+      { name: "Cursor", level: "Beginner", years: 1 },
+      { name: "claude", level: "Beginner", years: 1 },
+
+
     ]
   },
   {
@@ -95,7 +98,7 @@ export const educationData: Education[] = [
   },
   {
     id: "bca",
-    degree: "Bachelor of Computer Application (BCA)",
+    degree: "Bachelor of Computer Applications (BCA)",
     institution: "KLE Society GH BCA college",
     location: "Haveri, India",
     period: { start: "2012", end: "2015" },
