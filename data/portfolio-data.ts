@@ -40,7 +40,7 @@ export const skillsData: SkillCategory[] = [
       { name: "React", level: "Intermediate", years: 3 },
       { name: "Next.js", level: "Beginner", years: 2 },
       { name: "Angular", level: "Intermediate", years: 2 },
-      { name: "HTML/CSS", level: "Expert", years: 4 }
+      { name: "HTML/CSS", level: "Intermediate", years: 4 }
     ]
   },
   {
@@ -57,27 +57,25 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "AmazonQ", level: "Beginner", years: 1 },
       { name: "Cursor", level: "Beginner", years: 1 },
-      { name: "claude", level: "Beginner", years: 1 },
-
-
+      { name: "Claude", level: "Beginner", years: 1 },
     ]
   },
   {
-    category: "Tools & Technologies",
+    category: "Version Control",
     icon: "Wrench",
     skills: [
       { name: "Git", level: "Intermediate", years: 3 },
-      { name: "AWS", level: "Beginner", years: 1 },
-      { name: "Tailwind.css", level: "Intermediate", years: 2 }
+      { name: "Bitbucket", level: "Intermediate", years: 3 },
     ]
   },
   {
-    category: "UI/UX Design",
+    category: "Styling and UI/UX Design",
     icon: "design",
     skills: [
-      { name: "Figma", level: "Intermediate", years: 2 },
+      { name: "Tailwind CSS", level: "Intermediate", years: 2 },
+      { name: "Figma", level: "Beginner", years: 2 },
       { name: "Framer", level: "Beginner", years: 1 },
-      { name: "Adobe creative suite", level: "Intermediate", years: 2 }
+      { name: "Adobe Creative Suite", level: "Beginner", years: 2 }
     ]
   }
 ];
