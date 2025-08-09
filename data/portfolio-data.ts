@@ -132,7 +132,7 @@ export const experienceData: Experience[] = [
     company: "Freelancer",
     location: "Remote",
     period: { start: "Dec 2024", end: "Present" },
-    type: "Full-time",
+    type: "Part-time",
     description: "Designed and built web applications using React and NextJS to support social causes, improve accessibility, and meet stakeholder needs.",
     achievements: [
       "Design concept development and implementation for the main product application.",
@@ -263,7 +263,7 @@ export const freelanceProjects: Project[] = [
     technologies: ["Next.js", "TypeScript", "React", "CSS", "HTML", "Git"],
     category: "Civic Technology",
     status: "In Progress",
-    period: { start: "Dec 2024", end: "Jan 2025" },
+    period: { start: "Dec 2024", end: "Present" },
     features: [
       "Multi-factor authentication and voter verification system",
       "Mobile-optimized voting interface with intuitive design",

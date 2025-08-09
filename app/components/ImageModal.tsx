@@ -16,7 +16,6 @@ interface ImageModalProps {
 export function ImageModal({ isOpen, onClose, images, imageAlt, title }: ImageModalProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [imageError, setImageError] = useState<string>('');
   const [zoomLevel, setZoomLevel] = useState(1);
 
   const currentImagePath = images[currentImageIndex];
@@ -42,7 +41,6 @@ export function ImageModal({ isOpen, onClose, images, imageAlt, title }: ImageMo
       document.body.style.overflow = 'hidden';
       // Reset when modal opens
       setCurrentImageIndex(0);
-      setImageError('');
       setZoomLevel(1);
     }
 
@@ -72,7 +70,6 @@ export function ImageModal({ isOpen, onClose, images, imageAlt, title }: ImageMo
     if (hasMultipleImages) {
       setCurrentImageIndex(prev => (prev + 1) % images.length);
       setZoomLevel(1); // Reset zoom when changing images
-      setImageError('');
     }
   };
 
@@ -80,7 +77,6 @@ export function ImageModal({ isOpen, onClose, images, imageAlt, title }: ImageMo
     if (hasMultipleImages) {
       setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length);
       setZoomLevel(1); // Reset zoom when changing images
-      setImageError('');
     }
   };
 
@@ -231,14 +227,12 @@ export function ImageModal({ isOpen, onClose, images, imageAlt, title }: ImageMo
                             height: zoomLevel === 1 ? 'auto' : 'auto',
                             objectFit: 'contain',
                           }}
-                          onError={(e) => {
+                          onError={() => {
                             const errorMsg = `Failed to load: ${currentImagePath}`;
                             console.error(errorMsg);
-                            setImageError(errorMsg);
                           }}
                           onLoad={() => {
                             console.log('✅ Image loaded successfully:', currentImagePath);
-                            setImageError('');
                           }}
                         />
                       </motion.div>
@@ -255,7 +249,6 @@ export function ImageModal({ isOpen, onClose, images, imageAlt, title }: ImageMo
                         onClick={() => {
                           setCurrentImageIndex(index);
                           setZoomLevel(1);
-                          setImageError('');
                         }}
                         className={`w-3 h-3 rounded-full transition-all duration-200 ${
                           index === currentImageIndex 
