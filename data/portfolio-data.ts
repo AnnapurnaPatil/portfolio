@@ -6,7 +6,8 @@ import type {
   Certification,
   Experience,
   Award,
-  SocialLink
+  SocialLink,
+  Project
 } from '../types/portfolio';
 
 export const personalInfo: PersonalInfo = {
@@ -139,7 +140,9 @@ export const experienceData: Experience[] = [
       "Developed an online platform via NextJS that enabled seamless casting of electoral votes via mobile devices. This increased the voter turnout by 1% and also improved the accessibility of the votes cast.",
       "Learning and Stakeholder Management: Demonstrated continuous learning by leveraging frameworks like React and NextJS to build impactful web platforms from the ground up. Collaborated with diverse stakeholders to translate varied requirements into cohesive user experiences.",
     ],
-    technologies: ["React", "TypeScript", "HTML", "CSS", "Git", "Figma", "Next.js"]
+    technologies: ["React", "TypeScript", "HTML", "CSS", "Git", "Figma", "Next.js"],
+    hasProjects: true, // Enable projects button for freelancer
+    projectsUrl: "#freelance-projects" // Links to the new freelance projects section
   },
   {
     id: "exp2",
@@ -207,5 +210,85 @@ export const socialLinks: SocialLink[] = [
     username: "Annapurna Patil",
     icon: "Linkedin",
     color: "#0077b5"
+  }
+];
+
+export const freelanceProjects: Project[] = [
+  {
+    id: "project1",
+    title: "KalaaSātri",
+    description: "A React-based e-commerce platform enabling women below the poverty line to sell their handmade handlooms, promoting women empowerment and market reach.",
+    longDescription: "KalaaSātri is a comprehensive digital marketplace that serves as a bridge between skilled women artisans and potential customers. The platform focuses on empowering women below the poverty line by providing them with a digital space to showcase and sell their handmade handloom products, preserving traditional crafts while creating sustainable income opportunities.",
+    technologies: ["React", "TypeScript", "CSS", "HTML", "Git", "Figma"],
+    category: "Social Impact E-commerce",
+    status: "In Progress",
+    period: { start: "Jan 2025", end: "Present" },
+    features: [
+      "User-friendly product catalog with detailed handloom descriptions",
+      "Secure payment integration for seamless transactions",
+      "Artisan profiles showcasing their stories and craftsmanship",
+      "Responsive design optimized for mobile and desktop",
+      "Multi-language support for better accessibility",
+      "Order tracking and management system",
+      "Community features for artisan networking",
+      "Quality assurance and authenticity verification"
+    ],
+    challenges: [
+      "Designing an intuitive interface for users with varying technical literacy",
+      "Implementing secure payment systems for rural artisans",
+      "Creating a scalable architecture to handle growing user base",
+      "Ensuring mobile-first design for better accessibility",
+      "Building trust between buyers and artisans"
+    ],
+    outcomes: [
+      "Increased market reach for women artisans",
+      "Enhanced digital literacy among target users",
+      "Sustainable income generation for underprivileged women",
+      "Preservation and promotion of traditional handloom crafts",
+      "Building a supportive community of artisans"
+    ],
+    liveUrl: "#", // Replace with actual URL when available
+    githubUrl: "#", // Replace with actual GitHub URL if public
+    images: [
+      "/portfolio/KalaaSatri/1.png",
+      "/portfolio/KalaaSatri/2.png"
+    ], // Multiple screenshots for gallery
+    hasScreenshot: true // Flag to show screenshot button
+  },
+  {
+    id: "project2",
+    title: "Safe Ballot",
+    description: "A NextJS-based secure online voting platform that enables seamless casting of electoral votes via mobile devices, improving accessibility and voter turnout.",
+    longDescription: "Safe Ballot is a revolutionary secure and accessible online voting platform that modernizes the electoral process by enabling citizens to cast their votes through mobile devices. The platform prioritizes security, accessibility, and transparency to enhance democratic participation while maintaining the integrity of the electoral process.",
+    technologies: ["Next.js", "TypeScript", "React", "CSS", "HTML", "Git"],
+    category: "Civic Technology",
+    status: "Completed",
+    period: { start: "Dec 2024", end: "Jan 2025" },
+    features: [
+      "Multi-factor authentication and voter verification system",
+      "Mobile-optimized voting interface with intuitive design",
+      "Real-time vote counting and result display",
+      "Accessibility features for users with disabilities",
+      "End-to-end encryption for vote security",
+      "Audit trail and transparency features",
+      "Offline capability for areas with poor connectivity",
+      "Multi-language support for diverse populations"
+    ],
+    challenges: [
+      "Implementing robust security measures to prevent fraud and hacking",
+      "Ensuring platform accessibility across different devices and abilities",
+      "Managing high traffic during peak voting periods",
+      "Maintaining voter privacy while ensuring transparency",
+      "Building public trust in digital voting systems"
+    ],
+    outcomes: [
+      "1% increase in voter turnout compared to traditional methods",
+      "Improved accessibility for elderly and disabled voters",
+      "Reduced voting time and eliminated physical queue lengths",
+      "Enhanced trust in the electoral process through transparency",
+      "Cost reduction in election administration"
+    ],
+    liveUrl: "#", // Replace with actual URL when available
+    githubUrl: "#" // Replace with actual GitHub URL if public
   }
 ];

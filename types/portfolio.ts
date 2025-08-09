@@ -66,6 +66,8 @@ export interface Experience {
   description: string;
   achievements: string[];
   technologies: string[];
+  hasProjects?: boolean; // Optional flag to show projects button
+  projectsUrl?: string; // Optional URL for projects
 }
 
 export interface Award {
@@ -83,6 +85,24 @@ export interface SocialLink {
   username: string;
   icon: string;
   color: string;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  longDescription?: string;
+  technologies: string[];
+  category: string;
+  status: 'Completed' | 'In Progress' | 'Planned';
+  period: TimePeriod;
+  features: string[];
+  challenges?: string[];
+  outcomes?: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  images?: string[];
+  hasScreenshot?: boolean; // Flag to show screenshot button
 }
 
 export interface StructuredData {

@@ -11,6 +11,7 @@ import { SkillsSection } from './components/sections/SkillsSection';
 import { EducationSection } from './components/sections/EducationSection';
 import { CertificationsSection } from './components/sections/CertificationsSection';
 import { ExperienceSection } from './components/sections/ExperienceSection';
+import { FreelanceProjectsSection } from './components/sections/FreelanceProjectsSection';
 import { AwardsSection } from './components/sections/AwardsSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { Footer } from './components/Footer';
@@ -23,6 +24,7 @@ import {
   educationData,
   certificationsData,
   experienceData,
+  freelanceProjects,
   awardsData,
   socialLinks
 } from '../data/portfolio-data';
@@ -47,6 +49,8 @@ export default function Home() {
             <CertificationsSection certificationsData={certificationsData} />
             
             <ExperienceSection experienceData={experienceData} />
+            
+            <FreelanceProjectsSection projectsData={freelanceProjects} />
             
             <AwardsSection awardsData={awardsData} />
             
