@@ -44,11 +44,11 @@ export default function Home() {
             
             <SkillsSection skillsData={skillsData} />
             
+            <ExperienceSection experienceData={experienceData} />
+            
             <EducationSection educationData={educationData} />
             
             <CertificationsSection certificationsData={certificationsData} />
-            
-            <ExperienceSection experienceData={experienceData} />
             
             <FreelanceProjectsSection projectsData={freelanceProjects} />
             
