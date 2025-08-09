@@ -262,7 +262,7 @@ export const freelanceProjects: Project[] = [
     longDescription: "Safe Ballot is a revolutionary secure and accessible online voting platform that modernizes the electoral process by enabling citizens to cast their votes through mobile devices. The platform prioritizes security, accessibility, and transparency to enhance democratic participation while maintaining the integrity of the electoral process.",
     technologies: ["Next.js", "TypeScript", "React", "CSS", "HTML", "Git"],
     category: "Civic Technology",
-    status: "Completed",
+    status: "In Progress",
     period: { start: "Dec 2024", end: "Jan 2025" },
     features: [
       "Multi-factor authentication and voter verification system",

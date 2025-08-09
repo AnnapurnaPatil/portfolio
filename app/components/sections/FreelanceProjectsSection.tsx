@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Lightbulb, FolderOpen, Calendar, CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import Image from 'next/image';
 import type { Project } from '../../../types/portfolio';
 import { sectionVariants, itemVariants, VIEWPORT_MARGIN } from '../../../lib/constants';
 import { ProjectModal } from '../ProjectModal';
@@ -23,6 +24,42 @@ export function FreelanceProjectsSection({ projectsData }: FreelanceProjectsSect
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedProject(null);
+  };
+
+  const getProjectIcon = (project: Project) => {
+    // Check if project has a custom icon based on title
+    const projectTitle = project.title.toLowerCase();
+    
+    if (projectTitle.includes('kalaasatri') || projectTitle.includes('kalaasātri')) {
+      return (
+        <div className="w-6 h-6 relative">
+          <Image
+            src="/portfolio/KalaaSatri(icon).png"
+            alt="KalaaSatri icon"
+            width={24}
+            height={24}
+            className="object-contain group-hover:opacity-80 transition-opacity"
+          />
+        </div>
+      );
+    }
+    
+    if (projectTitle.includes('safe ballot') || projectTitle.includes('safeballot')) {
+      return (
+        <div className="w-6 h-6 relative">
+          <Image
+            src="/portfolio/SafeBallot(icon).png"
+            alt="Safe Ballot icon"
+            width={24}
+            height={24}
+            className="object-contain group-hover:opacity-80 transition-opacity"
+          />
+        </div>
+      );
+    }
+    
+    // Default folder icon for other projects
+    return <FolderOpen className="w-6 h-6 text-primary group-hover:text-primary/80 transition-colors" aria-hidden="true" />;
   };
 
   const getStatusIcon = (status: string) => {
@@ -88,7 +125,7 @@ export function FreelanceProjectsSection({ projectsData }: FreelanceProjectsSect
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <FolderOpen className="w-6 h-6 text-primary group-hover:text-primary/80 transition-colors" aria-hidden="true" />
+                        {getProjectIcon(project)}
                         <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                           {project.title}
                         </h3>

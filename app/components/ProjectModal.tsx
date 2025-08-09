@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Calendar, ExternalLink, Github, CheckCircle, Clock, AlertCircle, Lightbulb, Target, TrendingUp, Image as ImageIcon } from 'lucide-react';
+import Image from 'next/image';
 import type { Project } from '../../types/portfolio';
 import { Modal } from './Modal';
 import { ImageModal } from './ImageModal';
@@ -17,6 +18,46 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   if (!project) return null;
+
+  const getProjectTitleWithIcon = (project: Project) => {
+    const projectTitle = project.title.toLowerCase();
+    
+    if (projectTitle.includes('kalaasatri') || projectTitle.includes('kalaasātri')) {
+      return (
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 relative">
+            <Image
+              src="/portfolio/KalaaSatri(icon).png"
+              alt="KalaaSatri icon"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
+          </div>
+          <span>{project.title}</span>
+        </div>
+      );
+    }
+    
+    if (projectTitle.includes('safe ballot') || projectTitle.includes('safeballot')) {
+      return (
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 relative">
+            <Image
+              src="/portfolio/SafeBallot(icon).png"
+              alt="Safe Ballot icon"
+              width={24}
+              height={24}
+              className="object-contain"
+            />
+          </div>
+          <span>{project.title}</span>
+        </div>
+      );
+    }
+    
+    return project.title;
+  };
 
   const getStatusIcon = (status: string) => {
     switch (status) {
@@ -56,7 +97,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 
   return (
     <>
-      <Modal isOpen={isOpen} onClose={onClose} title={project.title}>
+      <Modal isOpen={isOpen} onClose={onClose} title={getProjectTitleWithIcon(project)}>
         <div className="p-6">
           {/* Project Header */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
