@@ -29,12 +29,13 @@ export function FreelanceProjectsSection({ projectsData }: FreelanceProjectsSect
   const getProjectIcon = (project: Project) => {
     // Check if project has a custom icon based on title
     const projectTitle = project.title.toLowerCase();
+    const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
     
     if (projectTitle.includes('kalaasatri') || projectTitle.includes('kalaasātri')) {
       return (
         <div className="w-6 h-6 relative">
           <Image
-            src="/portfolio/KalaaSatri(icon).png"
+            src={`${basePath}/KalaaSatri(icon).png`}
             alt="KalaaSatri icon"
             width={24}
             height={24}
@@ -48,7 +49,7 @@ export function FreelanceProjectsSection({ projectsData }: FreelanceProjectsSect
       return (
         <div className="w-6 h-6 relative">
           <Image
-            src="/portfolio/SafeBallot(icon).png"
+            src={`${basePath}/SafeBallot(icon).png`}
             alt="Safe Ballot icon"
             width={24}
             height={24}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { SkillCategory } from '../../../types/portfolio';
 import { sectionVariants, containerVariants, VIEWPORT_MARGIN } from '../../../lib/constants';
 import { getIcon, getSkillLevelColor } from '../../../lib/utils';
@@ -12,6 +13,26 @@ interface SkillsSectionProps {
 
 export function SkillsSection({ skillsData }: SkillsSectionProps) {
   const [isPaused, setIsPaused] = useState(false);
+  const [currentOffset, setCurrentOffset] = useState(0);
+  
+  const cardWidth = 320; // w-80 = 320px
+  const gap = 24; // gap-6 = 24px
+  const totalCardWidth = cardWidth + gap;
+  const maxOffset = -(totalCardWidth * skillsData.length);
+
+  const scrollNext = () => {
+    setCurrentOffset(prev => {
+      const newOffset = prev - totalCardWidth;
+      return newOffset <= maxOffset ? 0 : newOffset;
+    });
+  };
+
+  const scrollPrev = () => {
+    setCurrentOffset(prev => {
+      const newOffset = prev + totalCardWidth;
+      return newOffset > 0 ? maxOffset : newOffset;
+    });
+  };
 
   return (
     <motion.section
@@ -34,17 +55,41 @@ export function SkillsSection({ skillsData }: SkillsSectionProps) {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Navigation buttons - only visible when paused */}
+          {isPaused && (
+            <>
+              <button
+                onClick={scrollPrev}
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/80 border border-border hover:bg-background transition-all duration-200 shadow-lg"
+                aria-label="Previous skills"
+              >
+                <ChevronLeft className="w-5 h-5 text-foreground" />
+              </button>
+              <button
+                onClick={scrollNext}
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/80 border border-border hover:bg-background transition-all duration-200 shadow-lg"
+                aria-label="Next skills"
+              >
+                <ChevronRight className="w-5 h-5 text-foreground" />
+              </button>
+            </>
+          )}
+
           {/* Moving category cards container */}
           <motion.div
             className="flex gap-6"
-            animate={isPaused ? {} : {
+            animate={isPaused ? { x: currentOffset } : {
               x: [0, -(320 * skillsData.length + 24 * skillsData.length)]
             }}
-            transition={{
+            transition={isPaused ? {
+              type: "spring",
+              stiffness: 300,
+              damping: 30
+            } : {
               x: {
                 repeat: Infinity,
                 repeatType: "loop",
-                duration: 20,
+                duration: 50,
                 ease: "linear",
               },
             }}
@@ -120,7 +165,7 @@ export function SkillsSection({ skillsData }: SkillsSectionProps) {
         {/* Pause on hover hint */}
         <div className="flex justify-center mt-4">
           <div className="text-xs text-muted-foreground">
-            {isPaused ? "Movement paused • Move mouse away to resume" : "Hover to pause movement"}
+            {isPaused ? "Movement paused • Use arrow buttons to navigate" : "Hover to pause movement"}
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export const personalInfo: PersonalInfo = {
 export const aboutData: AboutData = {
   introduction: "I'm a passionate Front-End developer with a strong foundation in modern web technologies. My journey in software development has been driven by curiosity and a desire to create meaningful digital experiences that solve real-world problems. When I'm not coding, I'm raising a tiny human and managing family life — a role that's sharpened my skills in leadership, multitasking, and patience.",
   highlights: [
-    "4+ years of web development experience",
+    "5+ years of web development experience",
     "2+ years of UI/UX design Experience",
     "Expertise in React, Next.js, and TypeScript",
     "Passionate about clean code and user experience"
@@ -66,7 +66,7 @@ export const skillsData: SkillCategory[] = [
     icon: "Wrench",
     skills: [
       { name: "Git", level: "Intermediate", years: 3 },
-      { name: "Bitbucket", level: "Intermediate", years: 3 },
+      { name: "Bitbucket", level: "Intermediate", years: 2 },
     ]
   },
   {
@@ -262,8 +262,8 @@ export const freelanceProjects: Project[] = [
     longDescription: "Safe Ballot is a revolutionary secure and accessible online voting platform that modernizes the electoral process by enabling citizens to cast their votes through mobile devices. The platform prioritizes security, accessibility, and transparency to enhance democratic participation while maintaining the integrity of the electoral process.",
     technologies: ["Next.js", "TypeScript", "React", "CSS", "HTML", "Git"],
     category: "Civic Technology",
-    status: "In Progress",
-    period: { start: "Dec 2024", end: "Present" },
+    status: "Completed",
+    period: { start: "Dec 2024", end: "March 2025" },
     features: [
       "Multi-factor authentication and voter verification system",
       "Mobile-optimized voting interface with intuitive design",

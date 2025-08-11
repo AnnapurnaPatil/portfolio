@@ -21,13 +21,14 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 
   const getProjectTitleWithIcon = (project: Project) => {
     const projectTitle = project.title.toLowerCase();
+    const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
     
     if (projectTitle.includes('kalaasatri') || projectTitle.includes('kalaasātri')) {
       return (
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 relative">
             <Image
-              src="/portfolio/KalaaSatri(icon).png"
+              src={`${basePath}/KalaaSatri(icon).png`}
               alt="KalaaSatri icon"
               width={24}
               height={24}
@@ -44,7 +45,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 relative">
             <Image
-              src="/portfolio/SafeBallot(icon).png"
+              src={`${basePath}/SafeBallot(icon).png`}
               alt="Safe Ballot icon"
               width={24}
               height={24}
@@ -95,6 +96,17 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
     setIsImageModalOpen(false);
   };
 
+  // Transform image paths to work in both development and production
+  const getTransformedImages = (images: string[] | undefined) => {
+    if (!images) return [];
+    const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+    return images.map(imagePath => {
+      // If the path already includes /portfolio/, remove it and add the correct basePath
+      const cleanPath = imagePath.replace('/portfolio', '');
+      return `${basePath}${cleanPath}`;
+    });
+  };
+
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose} title={getProjectTitleWithIcon(project)}>
@@ -123,10 +135,10 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/10 hover:bg-purple-500/20 text-purple-500 text-sm font-medium transition-all duration-200 border border-purple-500/20 hover:border-purple-500/40"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  aria-label={`View ${project.title} screenshot`}
+                  aria-label={`View ${project.title} design`}
                 >
                   <ImageIcon className="w-4 h-4" aria-hidden="true" />
-                  View Screenshot
+                  View Design
                 </motion.button>
               )}
               {project.liveUrl && project.liveUrl !== '#' && (
@@ -251,7 +263,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
       <ImageModal
         isOpen={isImageModalOpen}
         onClose={closeImageModal}
-        images={project.images || []}
+        images={getTransformedImages(project.images)}
         imageAlt={`${project.title} screenshots`}
         title={`${project.title} - Screenshots`}
       />
