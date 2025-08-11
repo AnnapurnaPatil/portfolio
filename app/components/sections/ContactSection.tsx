@@ -1,10 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { Mail, MapPin, ExternalLink } from 'lucide-react';
 import type { PersonalInfo, SocialLink } from '../../../types/portfolio';
 import { sectionVariants, VIEWPORT_MARGIN } from '../../../lib/constants';
 import { getIcon } from '../../../lib/utils';
+import { ResumeModal } from '../ResumeModal';
 
 interface ContactSectionProps {
   personalInfo: PersonalInfo;
@@ -12,16 +14,26 @@ interface ContactSectionProps {
 }
 
 export function ContactSection({ personalInfo, socialLinks }: ContactSectionProps) {
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+
+  const openResumeModal = () => {
+    setIsResumeModalOpen(true);
+  };
+
+  const closeResumeModal = () => {
+    setIsResumeModalOpen(false);
+  };
   return (
-    <motion.section
-      id="contact"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: VIEWPORT_MARGIN }}
-      variants={sectionVariants}
-      className="mb-20"
-      aria-labelledby="contact-heading"
-    >
+    <>
+      <motion.section
+        id="contact"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: VIEWPORT_MARGIN }}
+        variants={sectionVariants}
+        className="mb-20"
+        aria-labelledby="contact-heading"
+      >
       <div className="section-content">
         <h2 id="contact-heading" className="text-3xl font-bold mb-8 text-primary">
           Get in Touch
@@ -102,9 +114,36 @@ export function ContactSection({ personalInfo, socialLinks }: ContactSectionProp
                 </a>
               ))}
             </div>
+            
+            {/* Resume View Button */}
+            <div className="mt-6">
+              <button
+                onClick={openResumeModal}
+                className="w-full flex items-center gap-4 p-4 rounded-xl border border-primary bg-primary/5 hover:bg-primary/10 transition-all duration-300 glow-hover group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                aria-label="View Annapurna Patil's resume"
+              >
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-primary/20">
+                  <ExternalLink className="w-5 h-5 text-primary" aria-hidden="true" />
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="font-medium group-hover:text-primary transition-colors">
+                    View Resume
+                  </p>
+                  <p className="text-sm text-muted-foreground">Download or view online</p>
+                </div>
+                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </motion.section>
+
+    {/* Resume Modal */}
+    <ResumeModal
+      isOpen={isResumeModalOpen}
+      onClose={closeResumeModal}
+    />
+    </>
   );
 }
