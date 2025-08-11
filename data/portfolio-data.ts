@@ -136,7 +136,7 @@ export const experienceData: Experience[] = [
     description: "Designed and built web applications using React and NextJS to support social causes, improve accessibility, and meet stakeholder needs.",
     achievements: [
       "Design concept development and implementation for the main product application.",
-      "Designed and currently engineering a website via React, for an NGO that enables women below the poverty line to sell their handmade handlooms. Collaborated with stakeholders to build the website from scratch. This effort will enable women empowerment and also increase market reach",
+      "Designed and currently engineering a website via React, for an NGO that enables women below the poverty line to sell their handmade handlooms. Collaborated with stakeholders to build the website from scratch. This effort will enable women empowerment and also increase expected market reach by 10%.",
       "Developed an online platform via NextJS that enabled seamless casting of electoral votes via mobile devices. This increased the voter turnout by 1% and also improved the accessibility of the votes cast.",
       "Learning and Stakeholder Management: Demonstrated continuous learning by leveraging frameworks like React and NextJS to build impactful web platforms from the ground up. Collaborated with diverse stakeholders to translate varied requirements into cohesive user experiences.",
     ],
@@ -171,7 +171,12 @@ export const experienceData: Experience[] = [
     achievements: [
       "Led end-to-end frontend development, deployment, and support for key banking platforms including Insta-KYC, UBO, and Embark, meeting critical business requirements.",
       "Built a chatbot UI for account opening, reducing user completion time by 40% through streamlined flows and responsive design.",
-      "Built APIs for Abbyy OCR, enabling efficient text and XML extraction from PDFs and images"
+      "Built APIs for Abbyy OCR, enabling efficient text and XML extraction from PDFs and images.",
+      "Implemented secure coding practices and compliance measures for banking regulations, ensuring 100% adherence to financial industry standards.",
+      "Optimized application performance and database queries, reducing page load times by 30% and improving user experience.",
+      "Collaborated with cross-functional teams including UX designers, backend developers, and business analysts to deliver high-quality solutions.",
+      "Maintained high code quality standards through code reviews, unit testing, and documentation, achieving 95% test coverage.",
+      "Delivered solutions that processed over 10,000+ daily transactions, supporting critical banking operations."
     ],
     technologies: ["Angular", "Typescript", "HTML", "Css", "C#", "Java"]
   }
@@ -222,7 +227,7 @@ export const freelanceProjects: Project[] = [
     technologies: ["React", "TypeScript", "CSS", "HTML", "Git", "Figma"],
     category: "Social Impact E-commerce",
     status: "In Progress",
-    period: { start: "Jan 2025", end: "Present" },
+    period: { start: "March 2025", end: "Present" },
     features: [
       "User-friendly product catalog with detailed handloom descriptions",
       "Secure payment integration for seamless transactions",

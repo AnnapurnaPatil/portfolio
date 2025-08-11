@@ -77,11 +77,10 @@ export function HeroSection({ personalInfo }: HeroSectionProps) {
           >
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true"></div>
             <span className="text-sm font-mono text-muted-foreground">
-              Ready for new opportunities
+             Available for opportunities
             </span>
           </div>
-          
-          <button
+                    <button
             onClick={() => scrollToSection('contact')}
             className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-medium shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             aria-label="Navigate to contact section"

@@ -35,8 +35,8 @@ export function ContactSection({ personalInfo, socialLinks }: ContactSectionProp
             </div>
             
             <p className="text-muted-foreground leading-relaxed mb-6">
-              I&apos;m always interested in new opportunities, collaborations, and interesting projects. 
-              Whether you have a question, want to discuss a project, or just want to say hello, 
+              I&apos;m keen to explore new opportunities, collaborations, and exciting projects. 
+              Whether you have a question, would like to discuss a project, or simply want to say hello, 
               feel free to reach out!
             </p>
             
@@ -101,16 +101,6 @@ export function ContactSection({ personalInfo, socialLinks }: ContactSectionProp
                   <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
                 </a>
               ))}
-            </div>
-            
-            <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/20">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" aria-hidden="true"></div>
-                <span className="text-sm font-medium text-primary">Available for opportunities</span>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                Currently open to full-time positions and freelance projects
-              </p>
             </div>
           </div>
         </div>
